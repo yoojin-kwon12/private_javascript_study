@@ -11,7 +11,6 @@
 
 // ## 2. Variable
 // let (added in ES6)
-
 // Global scope : 블럭 안, 블럭 밖에서 모두 사용 가능하다. 
 // 하지만 어플리케이션이 끝날 때까지 메모리에 할당되어져있기 때문에 최소한으로 사용해야한다.
 let globalName = 'global name';
@@ -147,14 +146,33 @@ console.log(`value: ${symbol1.description}, type: ${typeof symbol1.description}`
 // 자바스크립트가 가진 dynamic typing의 이러한 문제때문에 후에 type script가 나오게 되었다.
 let text = 'hello';
 console.log(text.charAt(0)); // h
-console.log(`value: ${text}, type: ${typeof text}`);
+console.log(`value: ${text}, type: ${typeof text}`); // value : hello , type : string
 
 text = 1;
-console.log(`value: ${text}, type: ${typeof text}`);
+console.log(`value: ${text}, type: ${typeof text}`); // value : 1 , type : number
 
 text = '7' + 5;
+console.log(`value: ${text}, type: ${typeof text}`); // value : 75 , type : string
+
+text = '7' - 5;
+console.log(`value: ${text}, type: ${typeof text}`); // value : 2 , type : number
+
+text = '10' / 5;
+console.log(`value: ${text}, type: ${typeof text}`); // value : 2 , type : number
+
+text = '7' * 5;
+console.log(`value: ${text}, type: ${typeof text}`); // value : 35 , type : number
+
+
+text = '8' / '2'; // 문자 나누기 문자이고 이상하다고 생각해서 자동으로 숫자로 변환한다. 
+console.log(`value: ${text}, type: ${typeof text}`); // value : 4 , type : number
+//console.log(text.charAt(0)); // 에러가 남 -> 이런 현상때문에 type script가 나옴
+
+text = '8' * '2';  
 console.log(`value: ${text}, type: ${typeof text}`);
 
-text = '8' / '2';
+text = '8' + '2';  
 console.log(`value: ${text}, type: ${typeof text}`);
-console.log(text.charAt(0)); // 에러가 남 -> 이런 현상때문에 type script가 나옴
+
+text = '8' - '2'; 
+console.log(`value: ${text}, type: ${typeof text}`);
