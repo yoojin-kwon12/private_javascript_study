@@ -9,7 +9,7 @@
 
 
 
-// ## 2. Variable
+// ## 2. Variable, rw(read/write) -> 메모리에 읽고 쓰기가 가능함
 // let (added in ES6)
 // Global scope : 블럭 안, 블럭 밖에서 모두 사용 가능하다. 
 // 하지만 어플리케이션이 끝날 때까지 메모리에 할당되어져있기 때문에 최소한으로 사용해야한다.
@@ -60,7 +60,10 @@ console.log(age) // 결과 : 4
 
 
 
-// 3. Constants
+// 3. Constant, r(read only)
+
+// Imutable data types: primitive types, frozen objects (i.e. object.freeze())
+// Mutable data types : all objects by default are mutable in JS
 // favor immutable data type always for a few reasons:
 //    - security
 //    - thread safety (다양한 thread가 동시에 변수에 접근하여 값을 변경할 수 있는데 해킹에 위험함.)
@@ -74,7 +77,10 @@ const daysInWeek = 7;
 const maxNumber = 5;
 
 
-
+// Primitive 인지 object 인지에 따라서 메모리에 다른 방식으로 저장된다.
+// Primitive type은 value로 값이 저장되고
+// object type은 object를 가르키는 reference가 메모리에 저장된다.
+// 그리고 그 reference는 실제로 object가 담겨있는 메모리를 가르키고 있다.
 
 
 // 4. Variable types
